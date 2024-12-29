@@ -135,14 +135,19 @@ function themVaoGioHang(masp, tensp) {
             "soluong": 1,
             "date": t
         });
+    }   
+    if (daCoSanPham) { // kiểm tra sản phẩm đã có trong giỏ hàng thì không thêm vào nữa
+        alert('Sản phẩm đã có trong giỏ hàng !');
     }
-
+    else{
     animateCartNumber();
     addAlertBox('Đã thêm ' + tensp + ' vào giỏ.', '#17c671', '#fff', 3500);
 
     setCurrentUser(user); // cập nhật giỏ hàng cho user hiện tại
     updateListUser(user); // cập nhật list user
-    capNhat_ThongTin_CurrentUser(); // cập nhật giỏ hàng
+    capNhat_ThongTin_CurrentUser(); // cập nhật giỏ hàng   
+    }
+
 }
 
 // ============================== TÀI KHOẢN ============================
